@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Animation Prototype</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+
+	<body class="page-overview">
+
+		<!-- Sticky marker usd for sticking ac-localnav on scroll -->
+		<div id="ac-ln-sticky-placeholder" class="css-sticky"></div>
+
+		<nav id="ac-localnav" class="ac-localnav ac-localnav-dark js no-touch css-sticky" lang="xx-XX" role="navigation" data-analytics-region="local nav" data-sticky="">
+			<div class="ac-ln-wrapper">
+				<div class="ac-ln-background"></div>
+				<div class="ac-ln-content">
+					<h2 class="ac-ln-title">
+						<a href="/imac-pro/" data-analytics-title="product index">iMac Pro</a>
+					</h2>
+
+					<div class="ac-ln-menu">
+						<a href="#ac-ln-menustate" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-open" id="ac-ln-menustate-open">
+							<span class="ac-ln-menucta-anchor-label">Open Menu</span>
+						</a>
+						<a href="#" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-close" id="ac-ln-menustate-close">
+							<span class="ac-ln-menucta-anchor-label">Close Menu</span>
+						</a>
+						<div class="ac-ln-menu-tray">
+							<ul class="ac-ln-menu-items">
+								<li class="ac-ln-menu-item">
+									
+										<span class="ac-ln-menu-link current" role="link" aria-disabled="true">Overview</span>
+									
+								</li>
+								<li class="ac-ln-menu-item">
+									
+										<a href="/imac-pro/specs/" class="ac-ln-menu-link" data-analytics-title="macOS">Tech Specs</a>
+									
+								</li>
+							</ul>
+						</div>
+						<div class="ac-ln-actions ac-ln-actions-center">
+							<div class="ac-ln-action ac-ln-action-menucta" aria-hidden="true">
+								<label for="ac-ln-menustate" class="ac-ln-menucta">
+										<span class="ac-ln-menucta-chevron"></span>
+								</label>
+							</div>
+							
+							<div class="ac-ln-action ac-ln-action-button">
+								<a href="/imac-pro/signup/" class="ac-ln-button button-secondary">Notify Me</a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<main id="main" class="main">
+
+			<!-- Section #1 - Rotating Monitor -->
+			<section class="section section-hero animated js-animated">
+
+				<div class="animation-wrapper">
+					<!-- lazy load handler - this must be before the image rendered from the CMS -->
+					<img onerror="
+						var aw = document.querySelector('.section-hero');
+					    var m = aw.querySelectorAll('img:not([onerror])'), w = window;
+					    for(i = 0; i < m.length; i++)
+					        m[i].setAttribute('lazy',
+					        m[i].getAttribute('src')),
+					        m[i].removeAttribute('src');
+					    var lazy = function(){
+					        var imgs = aw.querySelectorAll('[lazy]');
+					        for(i = 0; i < imgs.length; i++){
+					            var o = imgs[i], lazy = o.getAttribute('lazy');
+					            //if(o.y <= (w.screen.height + w.scrollY + 50) && o.y >= ( w.scrollY - 50)){
+					                o.setAttribute('src', lazy);
+					                o.removeAttribute('lazy');
+					            //}
+					        }
+					    }
+					    w.onload =  w.onscroll = lazy;
+					" src/>
+					<!-- lazy load handler -->
+					<!-- container for CMS source images - images will be lazy loaded -->
+					<div class="lazy-images visuallyhidden">
+						<!-- CMS source images -->
+						<img src="../assets/img/hero-video/large/000.jpg" />
+						<img src="../assets/img/hero-video/large/001.jpg" />
+						<img src="../assets/img/hero-video/large/002.jpg" />
+						<img src="../assets/img/hero-video/large/003.jpg" />
+						<img src="../assets/img/hero-video/large/004.jpg" />
+						<img src="../assets/img/hero-video/large/005.jpg" />
+						<img src="../assets/img/hero-video/large/006.jpg" />
+						<img src="../assets/img/hero-video/large/007.jpg" />
+						<img src="../assets/img/hero-video/large/008.jpg" />
+						<img src="../assets/img/hero-video/large/009.jpg" />
+						<img src="../assets/img/hero-video/large/010.jpg" />
+						<img src="../assets/img/hero-video/large/011.jpg" />
+						<img src="../assets/img/hero-video/large/012.jpg" />
+						<img src="../assets/img/hero-video/large/013.jpg" />
+						<img src="../assets/img/hero-video/large/014.jpg" />
+						<img src="../assets/img/hero-video/large/015.jpg" />
+						<img src="../assets/img/hero-video/large/016.jpg" />
+						<img src="../assets/img/hero-video/large/017.jpg" />
+						<img src="../assets/img/hero-video/large/018.jpg" />
+						<img src="../assets/img/hero-video/large/019.jpg" />
+						<!-- CMS source images -->
+					</div>
+					<!-- lazy loaded -->
+					<div class="sticky-wrapper">
+
+						<div class="video-wrapper">
+
+							<canvas></canvas>
+
+						</div>
+
+						<div class="screen-wrapper image-overlay">
+
+							<!-- Rotating monitor cloud burst overlay image as background image -->
+							<!-- <figure class="bg-image" style="background-image: url('Image_Url');"></figure> -->
+							<figure class="bg-image" style="background-image: url('../assets/img/hero-video/large/screen_endframe_large.jpg');"></figure>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="section-content">
+
+					<div class="heading-wrapper">
+
+						<h1 class="hero-headline">
+
+							<figure class="logo image-overview-logo-dell"></figure>
+
+							<figure class="logo image-overview-logo-computer"></figure>
+
+							<span class="visuallyhidden">Section_Title</span>
+
+						</h1>
+
+					</div>
+
+					<div class="row intro-wrapper show">
+
+						<div class="inner">
+
+							<h2 class="hero-subheadline columns large-12 center">Section_Subheadline</h2>
+
+							<p class="label large-11 small-12 center">Section_Text_Content</p>
+
+							<div class="violator-wrapper">
+								<span class="violator violator-secondary">Section_Callout_Text</span>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- Section #1 -->
+
+			<!-- Section #2 -->
+
+			<section class="section section-processor animated active">
+
+				<div class="sticky-wrapper">
+
+					<div class="section-content">
+
+						<h3 class="section-headline">Section_Headline</h3>
+
+						<div class="row">
+
+							<p class="intro column large-10 medium-12">Section_Text_Content</p>
+
+						</div>
+
+					</div>
+
+					<div class="image-wrapper section-visible">
+						<!-- Processor (eclipse) monitor image as background image -->
+						<!-- <figure class="moody bg-image progressive-image-animated" style="background-image: url('Image_Url');"></figure> -->
+						<figure class="moody bg-image progressive-image-animated" style="background-image: url('');"></figure>
+
+						<div class="wipe">
+							<!-- Processor break image as background image -->
+							<!-- <figure class="wipe-image bg-image progressive-image-animated" style="background-image: url('Image_Url');></figure> -->
+							<figure class="wipe-image bg-image progressive-image-animated"></figure>
+
+							<div class="section-content caption">
+
+								<h4 class="caption-heading">Caption_Heading</h4>
+
+								<p class="copy large-6 medium-9 small-12">Section_Copy_Text</p>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="section-content pad-bottom no-pad-top">
+						<!-- iterate CMS speclist items -->
+						<ul class="spec-list">
+							<li class="spec">Spec_List_Item</li>
+							<li class="spec small">Spec_List_Item</li>
+							<li class="spec small last">Last_Spec_List_Item</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- Section #2 -->
+
+		</main>
+
+		<script src="assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<script src="assets/js/vendor/sylvester.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+        <script src="assets/js/main.js"></script>
+	</body>
+
+
+</html>

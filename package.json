@@ -1,0 +1,15 @@
+{
+  "name": "macanimation",
+  "version": "1.0.0",
+  "description": "Animation prototype based on Apple Mac page",
+  "main": "server.js",
+  "scripts": {
+    "serve": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Wigley (DELL)",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
